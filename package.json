@@ -1,0 +1,21 @@
+{
+  "name": "clean-blog",
+  "version": "1.0.0",
+  "description": "Blog App with Express",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "keywords": [
+    "Node.js",
+    "NodeJs",
+    "Express"
+  ],
+  "author": "Kubilay Uysal",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^3.0.3"
+  }
+}
