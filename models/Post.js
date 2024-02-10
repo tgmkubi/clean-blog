@@ -10,7 +10,7 @@ const postSchema = new Schema({
     type: String,
     required: [true, 'Post detail is required.'],
   },
-  date: {
+  dateCreated: {
     type: Date,
     default: Date.now,
   },

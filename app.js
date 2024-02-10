@@ -53,11 +53,23 @@ app.post('/add_post', async (req, res) => {
     throw error;
   }
 
-  res.redirect('/');
+  return res.redirect('/');
 });
 
-app.get('/posts', (req, res) => {
-  res.render('post');
+app.get('/posts/:id', async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const post = await Post.findById(id);
+    if (!post) {
+      return res.status(404).send('Post bulunamadı...');
+    }
+    res.render('post', {
+      post,
+    });
+  } catch (error) {
+    return res.status(500).send('Sunucu Hatası');
+  }
 });
 
 app.listen(PORT, () => {
