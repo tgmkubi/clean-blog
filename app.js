@@ -11,6 +11,7 @@ const {
 const {
   addPost,
   editPost,
+  deletePost,
   getAllPosts,
   getSinglePost,
 } = require('./controllers/postController');
@@ -39,6 +40,7 @@ app.post('/add_post', addPost);
 app.get('/', getAllPosts);
 app.get('/posts/:id', getSinglePost);
 app.put('/posts/edit/:id', editPost);
+app.delete('/posts/delete/:id', deletePost);
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port http://localhost:${PORT}`);

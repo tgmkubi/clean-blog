@@ -40,6 +40,21 @@ exports.editPost = async (req, res) => {
   }
 };
 
+exports.deletePost = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const post = await Post.findByIdAndDelete(id);
+    if (!post) {
+      return res.status(404).send('Post bulunamadı...');
+    }
+
+    return res.status(200).redirect('/');
+  } catch (error) {
+    return res.status(500).send('Sunucu Hatası');
+  }
+};
+
 exports.getAllPosts = async (req, res) => {
   let posts;
   try {

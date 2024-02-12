@@ -38,7 +38,7 @@
           <p><%= post.detail %></p>
           <div class="d-flex justify-content-around">
             <a href="/posts/edit/<%= post.id %>" class="action-button update-button">Update Post</a>
-            <a href="#" class="action-button delete-button">Delete Post</a>
+            <a href="/posts/delete/<%= post.id %>?_method=DELETE" class="action-button delete-button" onclick="return confirm('Sure you wanna delete the post?')">Delete Post</a>
           </div>
         </div>
       </div>
