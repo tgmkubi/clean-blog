@@ -58,7 +58,7 @@ exports.deletePost = async (req, res) => {
 exports.getAllPosts = async (req, res) => {
   let posts;
   try {
-    posts = await Post.find();
+    posts = await Post.find().sort("-dateCreated");
   } catch (error) {
     console.log(error);
     throw error;

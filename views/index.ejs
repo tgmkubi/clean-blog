@@ -21,7 +21,6 @@
 
   <!-- Main Content -->
   <div class="container">
-
     <% for(let i = 0; i < posts.length; i++) { %>
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
@@ -34,9 +33,14 @@
               <%= posts[i].detail.slice(0,200) %>...
             </h3>
           </a>
+          <% const date = new Date(posts[i].dateCreated)  %>
+          <% const options = { month: "long" } %>
+          <% const month = new Intl.DateTimeFormat("en-US", options).format(date) %>
+          <% const day = date.getDate() %>
+          <% const year = date.getFullYear() %>
           <p class="post-meta">Posted by
             <a href="#">Kubilay Uysal</a>
-            on September 24, 2019</p>
+            on <%= month %> <%= day %>, <%= year %></p>
         </div>
         <hr>
         <!-- Pager -->
